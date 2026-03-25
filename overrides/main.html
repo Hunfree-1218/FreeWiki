@@ -1,0 +1,62 @@
+﻿{% extends "base.html" %}
+
+{% block footer %}
+<footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+            <div class="md-copyright" style="text-align: left; display: flex; flex-direction: column; align-items: flex-start;">
+
+                <div style="margin-bottom: 4px; color: #a0a0a0; font-size: 0.85em; display: flex; gap: 15px;">
+                    <span>📊 전체 조회수: <strong id="global-total-views" style="color: #fff;">0</strong></span>
+                    <span>📅 오늘 조회수: <strong id="global-daily-views" style="color: #fff;">0</strong></span>
+                </div>
+
+                <div class="md-copyright__highlight" style="margin: 0; font-size: 0.8em; color: #6e6e6e;">
+                    © 2026 HunFree - 훈프리 기록저장소
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-database-compat.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyApq66dAZbTXSbQSBgNzaq5-DWHfyaXYR4",
+        authDomain: "hunfree-8ec0b.firebaseapp.com",
+        projectId: "hunfree-8ec0b",
+        storageBucket: "hunfree-8ec0b.firebasestorage.app",
+        messagingSenderId: "1001768122486",
+        appId: "1:1001768122486:web:e3bcaa3595106188850757",
+        measurementId: "G-NGFS6XVC3T",
+        databaseURL: "https://hunfree-8ec0b-default-rtdb.asia-southeast1.firebasedatabase.app"
+    };
+
+    if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+    }
+    const db = firebase.database();
+
+    function getKstDateLabel() {
+        const now = new Date();
+        const kstNow = new Date(now.getTime() + (9 * 60 * 60 * 1000));
+        let dateLabel = kstNow.toISOString().split('T')[0];
+        if (kstNow.getHours() < 12) {
+            const yesterday = new Date(kstNow.getTime() - (24 * 60 * 60 * 1000));
+            dateLabel = yesterday.toISOString().split('T')[0];
+        }
+        return dateLabel;
+    }
+
+    const dateLabel = getKstDateLabel();
+    const totalRef = db.ref('views/total');
+    const dailyRef = db.ref('views/daily/' + dateLabel);
+
+    totalRef.transaction(c => (c || 0) + 1);
+    dailyRef.transaction(c => (c || 0) + 1);
+
+    totalRef.on('value', s => document.getElementById('global-total-views').innerText = s.val());
+    dailyRef.on('value', s => document.getElementById('global-daily-views').innerText = s.val() || 1);
+</script>
+{% endblock %}

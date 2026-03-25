@@ -1,0 +1,41 @@
+site_name: 훈프리 기록저장소
+site_url: https://Hunfree-1218.github.io/FreeWiki/
+
+theme:
+  name: material
+  language: ko
+  custom_dir: overrides
+  features:
+    - content.action.edit
+    - content.action.view
+  hide:
+    - footer.html
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: 다크 모드로 전환
+    - scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: 라이트 모드로 전환
+
+nav:
+  - 홈: index.md
+  - 🎮 게임:
+      - 페이지 1: HunFree/Game.md
+      - 페이지 2: HunFree/Game1.md
+      - 페이지 3: HunFree/Game2.md
+
+extra:
+  comments:
+    provider: giscus
+    options:
+      repo: Hunfree-1218/FreeWiki
+      repo_id: R_kgDORTiw2A
+      category: Announcements
+      category_id: DIC_kwDORTiw2M4C2wWt
