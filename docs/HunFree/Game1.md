@@ -31,27 +31,27 @@
 
 <div class="gallery-container">
   <div class="gallery-item">
-    <img src="../Image/FreeRunTitle.jpg" alt="FreeRunTitle">
+    <img src="../Image/FreeRunTitle.jpg" alt="1">
     <div class="image-caption">1. 메인 타이틀 화면</div>
   </div>
   <div class="gallery-item">
-    <img src="../Image/FreeRun1.jpg" alt="FreeRun1">
+    <img src="../Image/FreeRun1.jpg" alt="2">
     <div class="image-caption">2. 캐릭터 설정 및 맵 구성</div>
   </div>
   <div class="gallery-item">
-    <img src="../Image/FreeRunInGameDead.jpg" alt="FreeRunInGameDead">
+    <img src="../Image/FreeRunInGameDead.jpg" alt="3">
     <div class="image-caption">3. 인게임 사망 판정 테스트</div>
   </div>
   <div class="gallery-item">
-    <img src="../Image/FreeRunInGame.jpg" alt="FreeRunInGame">
+    <img src="../Image/FreeRunInGame.jpg" alt="4">
     <div class="image-caption">4. 실제 게임 플레이 화면</div>
   </div>
   <div class="gallery-item">
-    <img src="../Image/FreeRunDead.jpg" alt="FreeRunDead">
+    <img src="../Image/FreeRunDead.jpg" alt="5">
     <div class="image-caption">5. 데드 씬 연출</div>
   </div>
   <div class="gallery-item">
-    <img src="../Image/FreeRunEND.png" alt="FreeRunEND">
+    <img src="../Image/FreeRunEND.png" alt="6">
     <div class="image-caption">6. 게임 종료 및 결과 창</div>
   </div>
 </div>
@@ -59,5 +59,4 @@
 ---
 
 ### 📝 개발 노트
-
 위 이미지는 AI 생성물이 아닌 '훈프리'의 개인 도트 작업물입니다.
