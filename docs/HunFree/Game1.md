@@ -7,7 +7,7 @@
 <style>
   .gallery-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 한 줄에 2개씩 배치 */
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     margin: 20px 0;
   }
@@ -19,15 +19,11 @@
     border-radius: 8px;
     border: 1px solid #ddd;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-  }
-  .gallery-item img:hover {
-    transform: scale(1.02);
   }
   .image-caption {
     margin-top: 5px;
     font-size: 0.85em;
-    color: #666;
+    color: #888;
   }
 </style>
 
@@ -63,4 +59,5 @@
 ---
 
 ### 📝 개발 노트
-위 이미지는 ai 생성물이 아닌 '훈프리'의 개인 도트 작업물입니다
+
+위 이미지는 AI 생성물이 아닌 '훈프리'의 개인 도트 작업물입니다.
